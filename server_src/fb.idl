@@ -1,0 +1,14 @@
+module fb{
+	module corba{
+		typedef sequence<string> cityList;
+		typedef sequence<string> airlineList;
+
+		interface FlightBooking {
+			cityList cities();
+			
+			airlineList flights(in string fromCity, in string toCity, in string departTime);//query the specific flight lists			
+			boolean register(in string name, in string phone, in string mail, in string creditcard);
+			boolean book(in string fid, in string username);
+		};
+	};
+};
