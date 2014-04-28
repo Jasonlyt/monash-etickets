@@ -1,10 +1,6 @@
 Flight-booking-corba
 ====================
 
-A distributed flight booking application using corba with web-client
-Flight-booking-corba
-====================
-
 A distributed flight booking application using corba with web-client. This project is an assignment of the course of distributed system programming. The main feature in this project is using corba technology to build a distributed flight booking system.
 
 ###Specification
