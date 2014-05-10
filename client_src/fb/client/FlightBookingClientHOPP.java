@@ -75,16 +75,48 @@ public class FlightBookingClientHOPP implements FlightBookingService {
 	@Override
 	public boolean bookReq(String fid,String name) throws RemoteException {
 		// TODO Auto-generated method stub
-		return false;
+		return impl.book(fid, name);
 	}
 
 	@Override
 	public boolean regReq(String name, String phone, String mail,
 			String creditcard) throws RemoteException {
-		// TODO Auto-generated method stub
-		return false;
+		return impl.register(name, phone, mail, creditcard);
 	}
 
-
+	public boolean checkFid(String fid){
+		String fidRE = "(cea|ac|qan)[0-9]{4}";
+		return fid.matches(fidRE);
+	}
+	
+	public boolean checkCity(String city){
+		String cityRE = "^[A-Za-z]+$";
+		return city.matches(cityRE);
+	}
+	
+	public boolean checkDate(String date){
+		String dateRE = "05/[0-9]{2}/2014";
+		return date.matches(dateRE); 
+	}
+	
+	public boolean checkUser(String name){
+		String nameRE = "^[A-Za-z]+$";
+		return name.matches(nameRE);
+	}
+	
+	public boolean checkPhone(String phone){
+		String phoneRE = "^((13[0-9])|(15[^4,\\D])|(18[0,5-9]))\\d{8}$";
+		return phone.matches(phoneRE);
+	}
+	
+	public boolean checkMail(String mail){
+		String mailRE = "^([a-z0-9A-Z]+[-|\\.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-zA-Z]{2,}$";
+		return mail.matches(mailRE);
+	}
+	
+	public boolean checkCredit(String creditcard){
+		String creditcardRE = "[0-9]{16}";
+		return creditcard.matches(creditcardRE);
+	}
 
 }

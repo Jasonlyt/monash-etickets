@@ -1,21 +1,14 @@
 package fb.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import fb.client.FlightBookingClientHOPP;
-
 public class QueryTicketsServlet extends HttpServlet {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Override
@@ -35,7 +28,6 @@ public class QueryTicketsServlet extends HttpServlet {
 			
 			request.getRequestDispatcher("/listflights.jsp").forward(request, response); 
 		}else{
-			request.setAttribute("alertMessage", "Please input the your departure city and destination!");
 			request.getRequestDispatcher("/index.jsp").forward(request, response); 
 		}
 		

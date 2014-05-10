@@ -32,4 +32,16 @@ public class FlightBookingJSP {
 		return null;
 		
 	}
+	
+	public static String[] cityList(){
+		FlightBookingClientHOPP clientHOPP = new FlightBookingClientHOPP();
+		try {
+			String[] cities = clientHOPP.cities();
+			return cities;
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
 }

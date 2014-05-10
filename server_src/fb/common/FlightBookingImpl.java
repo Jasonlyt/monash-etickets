@@ -5,12 +5,11 @@ import java.rmi.RemoteException;
 import fb.corba.FlightBookingPOA;
 
 public class FlightBookingImpl extends FlightBookingPOA {
-	
+
 	AirlineServerHOPP hopp = new AirlineServerHOPP();
-	
+
 	@Override
 	public String[] cities() {
-		
 		try {
 			return hopp.cities();
 		} catch (RemoteException e) {
@@ -19,10 +18,8 @@ public class FlightBookingImpl extends FlightBookingPOA {
 		return null;
 	}
 
-
 	@Override
 	public String[] flights(String fromCity, String toCity, String date) {
-		
 		try {
 			return hopp.flights(fromCity, toCity, date);
 		} catch (RemoteException e) {
@@ -31,11 +28,9 @@ public class FlightBookingImpl extends FlightBookingPOA {
 		return null;
 	}
 
-
 	@Override
 	public boolean register(String name, String phone, String mail,
 			String creditcard) {
-		
 		try {
 			return hopp.regReq(name, phone, mail, creditcard);
 		} catch (RemoteException e) {
@@ -43,7 +38,6 @@ public class FlightBookingImpl extends FlightBookingPOA {
 		}
 		return false;
 	}
-
 
 	@Override
 	public boolean book(String fid, String username) {
@@ -54,6 +48,5 @@ public class FlightBookingImpl extends FlightBookingPOA {
 		}
 		return false;
 	}
-
 
 }
